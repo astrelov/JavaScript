@@ -1,18 +1,21 @@
-function equals(cmp1, cmp2) {
-  if (cmp1 === null || cmp2 === null) {
-    return cmp1 === null && cmp2 === null;
-  } else if (Array.isArray(cmp1) === true && Array.isArray(cmp2) === true) {
-    if (cmp1.length !== cmp2.length) return false;
-    for (let i = 0; i < cmp1.length; i += 1) if (!equals(cmp1[i], cmp2[i])) return false;
-  } else if (typeof cmp1 === 'object' && typeof cmp2 === 'object') {
-    const m1 = Object.getOwnPropertyNames(cmp1);
-    const m2 = Object.getOwnPropertyNames(cmp2);
-    if (m1.length !== m2.length) return false;
-    return m1.every(x => equals(cmp1[x], cmp2[x]));
-  } else {
-    return cmp1 === cmp2;
+function search(needle, haystack) {
+  if (Array.isArray(haystack)) {
+    return haystack.some(x => search(needle, haystack[x]));
+  } else if (typeof haystack === 'object') {
+    const m = Object.getOwnPropertyNames(haystack);
+    return m.some(x => search(needle, haystack[x]));
   }
-  return true;
+  return needle === haystack;
 }
 
-function search(needle, haystack) {}
+console.log(search(5, { a: 3, b: 5, c: 9 })); // true
+
+console.log(search('5', { a: 3, b: 5, c: 9 })); // false
+
+console.log(search(5, { a: 3, b: { u: 8, '5': 'c', s: 5 }, c: 9 })); // true
+
+console.log(search(5, { a: 3, b: { u: 8, '5': 'c', s: 7 }, c: 9 })); // false
+
+console.log(search(5, { a: [1, 2, 3, 5, 7, 9], c: 8, s: 6 })); // true
+
+console.log(search(5, { a: [1, 2, { s: 4, c: { u: 5 } }], s: 9 })); // true
