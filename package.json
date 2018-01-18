@@ -7,12 +7,19 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "eslintConfig": {
-    "extends": "airbnb-base"
+    "extends": "airbnb-base",
+    "globals": {
+      "document": true,
+      "window": true,
+      "localStorage": true
+    }
   },
+
   "prettier": {
     "printWidth": 100,
     "singleQuote": true,
-    "trailingComma": "all"
+    "trailingComma": "all",
+    "arrowParens": "always"
   },
   "author": "astrielov",
   "license": "ISC",
@@ -20,5 +27,8 @@
     "eslint": "^4.15.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0"
+  },
+  "dependencies": {
+    "p5": "^0.5.16"
   }
 }
