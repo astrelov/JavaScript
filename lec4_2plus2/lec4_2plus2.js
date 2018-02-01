@@ -45,11 +45,11 @@ create result div. Else create error divs */
   butt.addEventListener('click', () => {
     removeAllDivs();
 
-    if (!checkNaN(inp1.value) && !checkNaN(inp2.value)) {
+    if (!checkNaN(inp1.value) && !checkNaN(inp2.value) && inp1.value !== '' && inp2.value !== '') {
       body.appendChild(newResDiv(Number(inp1.value) + Number(inp2.value)));
     } else {
-      if (checkNaN(inp1.value)) body.insertBefore(newErrDiv(), inp2);
-      if (checkNaN(inp2.value)) body.insertBefore(newErrDiv(), butt);
+      if (checkNaN(inp1.value) || inp1.value === '') body.insertBefore(newErrDiv(), inp2);
+      if (checkNaN(inp2.value) || inp2.value === '') body.insertBefore(newErrDiv(), butt);
     }
   });
 });

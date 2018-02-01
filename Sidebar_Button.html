@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sidebar</title>
+</head>
+<style>
+  .btn {
+    display: inline-block;
+    font-size: 2em;
+    padding: 0.75em 1em;
+    background-color: #1ce;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    background-color: #333;
+    transition: transform 0.3s ease-out;
+  }
+
+  .sidebar.is-hidden {
+    transform: translateX(300px);
+  }
+
+  .sidebar ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  .sidebar li {
+    list-style: none;
+  }
+
+  .sidebar li + li {
+    border-top: 1px solid white;
+  }
+
+  .sidebar a {
+    display: block;
+    padding: 1em 1.5em;
+    color: #fff;
+    text-decoration: none;
+  }
+</style>
+<body>
+  <a href="#" class="btn">Click me!</a>
+  <div class="sidebar is-hidden">
+    <ul>
+      <li><a href="#">Link 1</a></li>
+      <li><a href="#">Link 2</a></li>
+      <li><a href="#">Link 3</a></li>
+      <li><a href="#">Link 4</a></li>
+      <li><a href="#">Link 5</a></li>
+    </ul>
+  </div>
+</body>
+<script src="Sidebar_Button.js"></script>
+</html>

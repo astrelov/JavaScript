@@ -1,4 +1,4 @@
-function smartConfig(defaultValue) {
+export default function smartConfig(defaultValue) {
   const cacheEntry = {};
 
   return {
