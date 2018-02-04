@@ -16,6 +16,13 @@ test('arrays: same content on diff indexes with objects inside.', (t) => {
 });
 
 
+test('arrays: same length, different elements.', (t) => {
+  const a = ['lkasdfj', 'g', 5];
+  const b = ['lkhsdfj', 'h', 8];
+  t.false(equals(a, b));
+});
+
+
 test('arrays: same content with different objects inside.', (t) => {
   const a = ['lkasdfj', { a: 6, str: undefined }, [67, 98, ['lol', '14']], 'g'];
   const b = ['g', { a: 6, str: null }, [67, 98, ['lol', '14']], 'lkasdfj'];
