@@ -1,37 +1,28 @@
+const smartObjectToFilds = new Map();
+// smartObject / new Set([name, secondName, patronimic])
+
 function createSmartObject(object) {
   const resObj = {};
 
   Object.defineProperty(resObj, 'name', {
     configurable: true,
     set(value) {
-      this.name.value = value;
+__name = value;
+      function () {
+
+      }
     },
   });
   resObj.name = object.name;
 
-  console.log(resObj);
-
-  Object.defineProperty(resObj, 'surname', {
-    configurable: true,
-    set(value) {
-      this._surname_ = value;
-    }
-  });
-  resObj.surname = object.surname;
-
-  console.log(resObj);
-
-  Object.defineProperty(resObj, 'patronimic', {
-    configurable: true,
-    set(value) {
-      this._patronimic_ = value;
-    }
-  });
-  resObj.patronimic = object.patronimic;
-
-  console.log(resObj);
   return resObj;
 }
+
+
+
+
+
+
 
 function defineComputedField(object, computedFieldName, fieldsNames, f) {
   Object.defineProperty(object, computedFieldName, {
