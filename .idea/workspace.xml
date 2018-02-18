@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8a9afa02-22c8-4a4c-a9d2-5e1174d07bec" name="Default" comment="">
+    <list default="true" id="8a9afa02-22c8-4a4c-a9d2-5e1174d07bec" name="Default" comment="things have changed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change beforePath="$PROJECT_DIR$/selectors/selectors.js" afterPath="$PROJECT_DIR$/selectors/selectors.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,51 +30,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tictactoe/index.html">
+      <file leaf-file-name="selectors.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/selectors/selectors.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-              <folding />
+            <state relative-caret-position="153">
+              <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+              <folding>
+                <element signature="n#!!block;n#hasNoParent#0" expanded="false" />
+                <element signature="n#!!block;n#hasParent#0" expanded="false" />
+                <element signature="n#!!block;n#hasChild#0" expanded="false" />
+                <element signature="n#!!block;n#setLeftPadding#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tictactoe/index.js">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/selectors/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="332" column="0" lean-forward="false" selection-start-line="332" selection-start-column="0" selection-end-line="332" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!block;n#disableButton#0" expanded="false" />
-                <element signature="n#!!block;n#enableButton#0" expanded="false" />
-                <element signature="n#!!block;n#removeWinTitle#0" expanded="false" />
-                <element signature="n#!!block;n#showWinTitle#0" expanded="false" />
-                <element signature="n#!!block;n#removeWinCells#0" expanded="false" />
-                <element signature="e#1385#1461#0" expanded="false" />
-                <element signature="n#!!block;n#getWinningRowIndex#0" expanded="false" />
-                <element signature="n#!!block;n#getWinningColumnIndex#0" expanded="false" />
-                <element signature="n#!!block;n#checkFirstDiagonale#0" expanded="false" />
-                <element signature="n#!!block;n#checkSecondDiagonale#0" expanded="false" />
-                <element signature="n#!!block;n#checkWin#0" expanded="false" />
-                <element signature="n#!!block;n#gameOver#0" expanded="false" />
-                <element signature="e#3640#3817#0" expanded="false" />
-                <element signature="e#3847#4015#0" expanded="false" />
-                <element signature="e#4034#4202#0" expanded="false" />
-                <element signature="e#4222#4399#0" expanded="false" />
-                <element signature="n#!!block;n#clearField#0" expanded="false" />
-                <element signature="n#!!block;n#render#0" expanded="false" />
-                <element signature="n#!!block;n#pullFromStorage#0" expanded="false" />
-                <element signature="n#!!block;n#removeCellPlayerClass#0" expanded="false" />
-                <element signature="n#!!block;n#addCellPlayerClass#0" expanded="false" />
-                <element signature="n#!!block;n#pushToStorage#0" expanded="false" />
-                <element signature="n#!!block;n#doRestart#0" expanded="false" />
-                <element signature="e#6413#6920#0" expanded="false" />
-                <element signature="e#6966#7191#0" expanded="false" />
-                <element signature="e#7237#7530#0" expanded="false" />
-                <element signature="e#7578#7620#0" expanded="false" />
-                <element signature="e#7859#8045#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="136">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -123,7 +101,6 @@
         <option value="$PROJECT_DIR$/lec1_equals.js" />
         <option value="$PROJECT_DIR$/lec1_equals/lec1_equals.js" />
         <option value="$PROJECT_DIR$/main.c" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/lec1_smartConfig/lec1_smartConfig.js" />
         <option value="$PROJECT_DIR$/lec1_equals/equals-tests.js" />
         <option value="$PROJECT_DIR$/lec1_smartConfig/smartConfig-tests.js" />
@@ -146,12 +123,13 @@
         <option value="$PROJECT_DIR$/selectors/index.html" />
         <option value="$PROJECT_DIR$/Event?/index.html" />
         <option value="$PROJECT_DIR$/Event?/script.js" />
-        <option value="$PROJECT_DIR$/selectors/selectors.js" />
         <option value="$PROJECT_DIR$/lec1_equals/equals.js" />
         <option value="$PROJECT_DIR$/callback.js" />
         <option value="$PROJECT_DIR$/tictactoe/index.html" />
         <option value="$PROJECT_DIR$/tictactoe/index.js" />
         <option value="$PROJECT_DIR$/tictactoe/generateField.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/selectors/selectors.js" />
       </list>
     </option>
   </component>
@@ -241,7 +219,7 @@
             <path>
               <item name="JavaScript" type="b2602c69:ProjectViewProjectNode" />
               <item name="JavaScript" type="462c0819:PsiDirectoryNode" />
-              <item name="tictactoe" type="462c0819:PsiDirectoryNode" />
+              <item name="selectors" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -431,7 +409,7 @@
       <workItem from="1518798423156" duration="123000" />
       <workItem from="1518798618748" duration="8000" />
       <workItem from="1518864034397" duration="28806000" />
-      <workItem from="1518941159078" duration="14010000" />
+      <workItem from="1518941159078" duration="15840000" />
     </task>
     <task id="LOCAL-00001" summary="things have changed">
       <created>1517513191891</created>
@@ -496,11 +474,18 @@
       <option name="project" value="LOCAL" />
       <updated>1518960513149</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="things have changed">
+      <created>1518961053567</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1518961053567</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219716000" />
+    <option name="totallyTimeSpent" value="221546000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="26" width="1366" height="742" extended-state="6" />
@@ -508,6 +493,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -531,7 +517,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -750,13 +735,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/selectors/selectors.html" />
     <entry file="file://$PROJECT_DIR$/selectors/copyPaste.js" />
-    <entry file="file://$PROJECT_DIR$/selectors/example.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CustomEvent/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -792,29 +770,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/selectors/selectors.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/selectors/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tictactoe/index2.html" />
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="22" lean-forward="true" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lec1_equals/equals.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -882,7 +838,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tictactoe/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="1122">
           <caret line="332" column="0" lean-forward="false" selection-start-line="332" selection-start-column="0" selection-end-line="332" selection-end-column="0" />
           <folding>
             <element signature="n#!!block;n#disableButton#0" expanded="false" />
@@ -922,6 +878,43 @@
         <state relative-caret-position="170">
           <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="20" column="25" lean-forward="false" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/selectors/example.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/selectors/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/selectors/selectors.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+          <folding>
+            <element signature="n#!!block;n#hasNoParent#0" expanded="false" />
+            <element signature="n#!!block;n#hasParent#0" expanded="false" />
+            <element signature="n#!!block;n#hasChild#0" expanded="false" />
+            <element signature="n#!!block;n#setLeftPadding#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

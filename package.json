@@ -8,10 +8,17 @@
   },
   "eslintConfig": {
     "extends": "airbnb-base",
+    "rules": {
+      "no-param-reassign": 0
+    },
     "globals": {
       "document": true,
       "window": true,
-      "localStorage": true
+      "localStorage": true,
+      "fetch": true,
+      "Option": true,
+      "Event": true,
+      "CustomEvent": true
     }
   },
   "prettier": {
