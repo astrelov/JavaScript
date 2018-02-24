@@ -4,22 +4,23 @@ let pulledMoves = [];
 let pulledCurrentMove = 0;
 let pulledN;
 
-const N = field.querySelector('.row').childElementCount; // length of square side
-
+const gameField = document.querySelector('.field');
 const undoButt = document.querySelector('.undo-btn');
 const redoButt = document.querySelector('.redo-btn');
 const restartButt = document.querySelector('.restart-btn');
 const wonTitle = document.querySelector('.won-title');
 const wonMsg = document.querySelector('.won-message');
 
-function disableButton(button) {
-  button.disabled = true;
-  button.style.cursor = 'not-allowed';
+const N = gameField.querySelector('.row').childElementCount; // length of square side
+
+function disableButton() {
+  this.disabled = true;
+  this.style.cursor = 'not-allowed';
 }
 
-function enableButton(button) {
-  button.disabled = false;
-  button.style.cursor = 'pointer';
+function enableButton() {
+  this.disabled = false;
+  this.style.cursor = 'pointer';
 }
 
 function removeWinTitle() {
@@ -38,7 +39,7 @@ function showWinTitle(playerWon) {
 }
 
 function removeWinCells() {
-  const winCells = Object.values(field.querySelectorAll('.win'));
+  const winCells = Object.values(gameField.querySelectorAll('.win'));
 
   winCells.forEach((cell) => {
     cell.classList.remove('win');
@@ -49,15 +50,13 @@ function removeWinCells() {
   });
 }
 
-const newMove = (cellId) => {
-  return {
-    cellId,
-    player: (moves.length % 2) ? 'r' : 'ch',
-  };
-};
+function NewMove(cellId) {
+  this.cellId = cellId;
+  this.player = (moves.length % 2) ? 'r' : 'ch';
+}
 
 function getWinningRowIndex() {
-  const rows = Object.values(field.querySelectorAll('.row'));
+  const rows = Object.values(gameField.querySelectorAll('.row'));
   let winRow = null;
 
   rows.forEach((row, ind) => {
@@ -76,7 +75,7 @@ function getWinningColumnIndex() {
     const cellsCh = [];
     const cellsR = [];
     for (let j = 0; j < N; j += 1) {
-      const cell = field.querySelector(`#c-${(j * N) + i}`);
+      const cell = gameField.querySelector(`#c-${(j * N) + i}`);
       cellsCh.push(cell.classList.contains('ch'));
       cellsR.push(cell.classList.contains('r'));
     }
@@ -94,7 +93,7 @@ function checkFirstDiagonale() {
   const cellsCh = [];
   const cellsR = [];
   for (let i = 0; i < N * N; i += N + 1) {
-    const cell = field.querySelector(`#c-${i}`);
+    const cell = gameField.querySelector(`#c-${i}`);
     cellsCh.push(cell.classList.contains('ch'));
     cellsR.push(cell.classList.contains('r'));
   }
@@ -111,7 +110,7 @@ function checkSecondDiagonale() {
   const cellsCh = [];
   const cellsR = [];
   for (let i = N - 1; i < (N * N) - 1; i += N - 1) {
-    const cell = field.querySelector(`#c-${i}`);
+    const cell = gameField.querySelector(`#c-${i}`);
     cellsCh.push(cell.classList.contains('ch'));
     cellsR.push(cell.classList.contains('r'));
   }
@@ -144,7 +143,7 @@ function gameOver() {
 
   if (rowIndex !== null) {
     direction = 'horizontal';
-    const rows = Object.values(field.querySelectorAll('.row'));
+    const rows = Object.values(gameField.querySelectorAll('.row'));
     const row = rows[rowIndex];
     winCells = Object.values(row.childNodes);
   }
@@ -152,7 +151,7 @@ function gameOver() {
   if (columnIndex !== null) {
     direction = 'vertical';
     for (let i = columnIndex; i < N * N; i += N) {
-      const cell = field.querySelector(`#c-${i}`);
+      const cell = gameField.querySelector(`#c-${i}`);
       winCells.push(cell);
     }
   }
@@ -160,7 +159,7 @@ function gameOver() {
   if (firstDiag) {
     direction = 'diagonal-right';
     for (let i = 0; i < N * N; i += N + 1) {
-      const cell = field.querySelector(`#c-${i}`);
+      const cell = gameField.querySelector(`#c-${i}`);
       winCells.push(cell);
     }
   }
@@ -168,7 +167,7 @@ function gameOver() {
   if (secondDiag) {
     direction = 'diagonal-left';
     for (let i = N - 1; i < (N * N) - 1; i += N - 1) {
-      const cell = field.querySelector(`#c-${i}`);
+      const cell = gameField.querySelector(`#c-${i}`);
       winCells.push(cell);
     }
   }
@@ -183,7 +182,7 @@ function gameOver() {
 }
 
 function clearField() {
-  const cells = Object.values(field.querySelectorAll('.cell'));
+  const cells = Object.values(gameField.querySelectorAll('.cell'));
   cells.forEach(cell => cell.classList.remove('ch'));
   cells.forEach(cell => cell.classList.remove('r'));
 }
@@ -205,7 +204,7 @@ function render() {
         custom: true,
       },
     });
-    field.querySelector(`#c-${pulledMoves[i].cellId}`).dispatchEvent(event);
+    gameField.querySelector(`#c-${pulledMoves[i].cellId}`).dispatchEvent(event);
   }
 
   for (let i = pulledMoves.length; i > pulledCurrentMove; i -= 1) {
@@ -248,25 +247,25 @@ function pushToStorage() {
 function doRestart() {
   removeWinTitle();
   removeWinCells();
-  disableButton(undoButt);
-  disableButton(redoButt);
+  disableButton.call(undoButt);
+  disableButton.call(redoButt);
   clearField();
   moves = [];
   currentMove = 0;
 }
 
-field.addEventListener('click', (e) => {
+gameField.addEventListener('click', (e) => {
   const clickOnActiveCell = e.target.classList.contains('cell') && wonTitle.classList.contains('hidden');
   if (!clickOnActiveCell) {
     return;
   }
 
   moves.length = currentMove; // delete all posible redo moves
-  moves.push(newMove(e.target.dataset.id));
+  moves.push(new NewMove(e.target.dataset.id));
 
   addCellPlayerClass();
-  enableButton(undoButt);
-  disableButton(redoButt);
+  enableButton.call(undoButt);
+  disableButton.call(redoButt);
 
   currentMove += 1;
   if (currentMove === N * N) {
@@ -287,10 +286,10 @@ undoButt.addEventListener('click', (e) => {
   removeCellPlayerClass();
   removeWinTitle();
   removeWinCells();
-  enableButton(redoButt);
+  enableButton.call(redoButt);
 
   if (!currentMove) {
-    disableButton(undoButt);
+    disableButton.call(undoButt);
   }
 
   if (!e.detail.custom) {
@@ -299,13 +298,12 @@ undoButt.addEventListener('click', (e) => {
 });
 
 redoButt.addEventListener('click', (e) => {
-
   addCellPlayerClass();
-  enableButton(undoButt);
+  enableButton.call(undoButt);
 
   currentMove += 1;
   if (currentMove === moves.length) {
-    disableButton(redoButt);
+    disableButton.call(redoButt);
   }
   if (currentMove === N * N) {
     showWinTitle();

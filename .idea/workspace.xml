@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a9afa02-22c8-4a4c-a9d2-5e1174d07bec" name="Default" comment="things have changed">
+      <change beforePath="" afterPath="$PROJECT_DIR$/this/temp.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change beforePath="$PROJECT_DIR$/selectors/selectors.js" afterPath="$PROJECT_DIR$/selectors/selectors.js" />
+      <change beforePath="$PROJECT_DIR$/tictactoe/index.js" afterPath="$PROJECT_DIR$/tictactoe/index.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,13 +34,19 @@
       <file leaf-file-name="selectors.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/selectors/selectors.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+            <state relative-caret-position="272">
+              <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding>
                 <element signature="n#!!block;n#hasNoParent#0" expanded="false" />
                 <element signature="n#!!block;n#hasParent#0" expanded="false" />
+                <element signature="e#396#549#0" expanded="false" />
+                <element signature="e#474#527#0" expanded="false" />
                 <element signature="n#!!block;n#hasChild#0" expanded="false" />
-                <element signature="n#!!block;n#setLeftPadding#0" expanded="false" />
+                <element signature="e#859#891#0" expanded="false" />
+                <element signature="e#1057#1090#0" expanded="false" />
+                <element signature="e#1149#1236#0" expanded="false" />
+                <element signature="e#1284#1335#0" expanded="false" />
+                <element signature="e#1450#1569#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -126,9 +133,10 @@
         <option value="$PROJECT_DIR$/lec1_equals/equals.js" />
         <option value="$PROJECT_DIR$/callback.js" />
         <option value="$PROJECT_DIR$/tictactoe/index.html" />
-        <option value="$PROJECT_DIR$/tictactoe/index.js" />
         <option value="$PROJECT_DIR$/tictactoe/generateField.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/this/temp.js" />
+        <option value="$PROJECT_DIR$/tictactoe/index.js" />
         <option value="$PROJECT_DIR$/selectors/selectors.js" />
       </list>
     </option>
@@ -155,10 +163,10 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-27" />
-    <option name="y" value="72" />
-    <option name="width" value="1356" />
-    <option name="height" value="556" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1612" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -209,6 +217,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -221,18 +232,20 @@
               <item name="JavaScript" type="462c0819:PsiDirectoryNode" />
               <item name="selectors" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="JavaScript" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaScript" type="462c0819:PsiDirectoryNode" />
+              <item name="tictactoe" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../NodeServer2" />
@@ -409,7 +422,13 @@
       <workItem from="1518798423156" duration="123000" />
       <workItem from="1518798618748" duration="8000" />
       <workItem from="1518864034397" duration="28806000" />
-      <workItem from="1518941159078" duration="15840000" />
+      <workItem from="1518941159078" duration="15855000" />
+      <workItem from="1519140227559" duration="665000" />
+      <workItem from="1519141017310" duration="22000" />
+      <workItem from="1519232793036" duration="3746000" />
+      <workItem from="1519298225282" duration="660000" />
+      <workItem from="1519304235380" duration="1003000" />
+      <workItem from="1519457931401" duration="1652000" />
     </task>
     <task id="LOCAL-00001" summary="things have changed">
       <created>1517513191891</created>
@@ -481,19 +500,25 @@
       <option name="project" value="LOCAL" />
       <updated>1518961053567</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="things have changed">
+      <created>1518963863738</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1518963863738</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="221546000" />
+    <option name="totallyTimeSpent" value="229309000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="26" width="1366" height="742" extended-state="6" />
+    <frame x="-8" y="-8" width="1360" height="742" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -504,9 +529,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8690096" sideWeight="0.49707174" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23133236" sideWeight="0.49361023" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27058825" sideWeight="0.49361023" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -517,7 +541,9 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -575,13 +601,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/callback.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/promise.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -824,7 +843,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1020">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -832,52 +850,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="20" lean-forward="false" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tictactoe/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="332" column="0" lean-forward="false" selection-start-line="332" selection-start-column="0" selection-end-line="332" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!block;n#disableButton#0" expanded="false" />
-            <element signature="n#!!block;n#enableButton#0" expanded="false" />
-            <element signature="n#!!block;n#removeWinTitle#0" expanded="false" />
-            <element signature="n#!!block;n#showWinTitle#0" expanded="false" />
-            <element signature="n#!!block;n#removeWinCells#0" expanded="false" />
-            <element signature="e#1385#1461#0" expanded="false" />
-            <element signature="n#!!block;n#getWinningRowIndex#0" expanded="false" />
-            <element signature="n#!!block;n#getWinningColumnIndex#0" expanded="false" />
-            <element signature="n#!!block;n#checkFirstDiagonale#0" expanded="false" />
-            <element signature="n#!!block;n#checkSecondDiagonale#0" expanded="false" />
-            <element signature="n#!!block;n#checkWin#0" expanded="false" />
-            <element signature="n#!!block;n#gameOver#0" expanded="false" />
-            <element signature="e#3640#3817#0" expanded="false" />
-            <element signature="e#3847#4015#0" expanded="false" />
-            <element signature="e#4034#4202#0" expanded="false" />
-            <element signature="e#4222#4399#0" expanded="false" />
-            <element signature="n#!!block;n#clearField#0" expanded="false" />
-            <element signature="n#!!block;n#render#0" expanded="false" />
-            <element signature="n#!!block;n#pullFromStorage#0" expanded="false" />
-            <element signature="n#!!block;n#removeCellPlayerClass#0" expanded="false" />
-            <element signature="n#!!block;n#addCellPlayerClass#0" expanded="false" />
-            <element signature="n#!!block;n#pushToStorage#0" expanded="false" />
-            <element signature="n#!!block;n#doRestart#0" expanded="false" />
-            <element signature="e#6413#6920#0" expanded="false" />
-            <element signature="e#6966#7191#0" expanded="false" />
-            <element signature="e#7237#7530#0" expanded="false" />
-            <element signature="e#7578#7620#0" expanded="false" />
-            <element signature="e#7859#8045#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tictactoe/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -885,7 +857,101 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="326">
           <caret line="20" column="25" lean-forward="false" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/this/temp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="23" lean-forward="false" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tictactoe/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="49" lean-forward="false" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tictactoe/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!block;n#disableButton#0" expanded="false" />
+            <element signature="n#!!block;n#enableButton#0" expanded="false" />
+            <element signature="n#!!block;n#removeWinTitle#0" expanded="false" />
+            <element signature="n#!!block;n#showWinTitle#0" expanded="false" />
+            <element signature="e#919#1000#0" expanded="false" />
+            <element signature="e#1006#1051#0" expanded="false" />
+            <element signature="n#!!block;n#removeWinCells#0" expanded="false" />
+            <element signature="e#1183#1391#0" expanded="false" />
+            <element signature="n#!!block;n#NewMove#0" expanded="false" />
+            <element signature="n#!!block;n#getWinningRowIndex#0" expanded="false" />
+            <element signature="e#1649#1871#0" expanded="false" />
+            <element signature="e#1840#1867#0" expanded="false" />
+            <element signature="n#!!block;n#getWinningColumnIndex#0" expanded="false" />
+            <element signature="e#1963#2332#0" expanded="false" />
+            <element signature="e#2047#2219#0" expanded="false" />
+            <element signature="e#2251#2274#0" expanded="false" />
+            <element signature="e#2305#2328#0" expanded="false" />
+            <element signature="n#!!block;n#checkFirstDiagonale#0" expanded="false" />
+            <element signature="e#2468#2622#0" expanded="false" />
+            <element signature="e#2652#2674#0" expanded="false" />
+            <element signature="e#2703#2725#0" expanded="false" />
+            <element signature="n#!!block;n#checkSecondDiagonale#0" expanded="false" />
+            <element signature="e#2872#3026#0" expanded="false" />
+            <element signature="e#3056#3078#0" expanded="false" />
+            <element signature="e#3107#3129#0" expanded="false" />
+            <element signature="n#!!block;n#checkWin#0" expanded="false" />
+            <element signature="n#!!block;n#gameOver#0" expanded="false" />
+            <element signature="e#3692#3873#0" expanded="false" />
+            <element signature="e#3903#4075#0" expanded="false" />
+            <element signature="e#3982#4071#0" expanded="false" />
+            <element signature="e#4094#4266#0" expanded="false" />
+            <element signature="e#4173#4262#0" expanded="false" />
+            <element signature="e#4286#4467#0" expanded="false" />
+            <element signature="e#4374#4463#0" expanded="false" />
+            <element signature="e#4498#4569#0" expanded="false" />
+            <element signature="n#!!block;n#clearField#0" expanded="false" />
+            <element signature="n#!!block;n#render#0" expanded="false" />
+            <element signature="e#5007#5024#0" expanded="false" />
+            <element signature="e#5075#5282#0" expanded="false" />
+            <element signature="e#5120#5195#0" expanded="false" />
+            <element signature="e#5157#5188#0" expanded="false" />
+            <element signature="e#5350#5511#0" expanded="false" />
+            <element signature="e#5395#5470#0" expanded="false" />
+            <element signature="e#5432#5463#0" expanded="false" />
+            <element signature="n#!!block;n#pullFromStorage#0" expanded="false" />
+            <element signature="n#!!block;n#removeCellPlayerClass#0" expanded="false" />
+            <element signature="n#!!block;n#addCellPlayerClass#0" expanded="false" />
+            <element signature="n#!!block;n#pushToStorage#0" expanded="false" />
+            <element signature="n#!!block;n#doRestart#0" expanded="false" />
+            <element signature="e#6503#7024#0" expanded="false" />
+            <element signature="e#6637#6654#0" expanded="false" />
+            <element signature="e#6905#6930#0" expanded="false" />
+            <element signature="e#6949#6970#0" expanded="false" />
+            <element signature="e#6996#7022#0" expanded="false" />
+            <element signature="e#7070#7305#0" expanded="false" />
+            <element signature="e#7212#7251#0" expanded="false" />
+            <element signature="e#7277#7303#0" expanded="false" />
+            <element signature="e#7351#7653#0" expanded="false" />
+            <element signature="e#7465#7504#0" expanded="false" />
+            <element signature="e#7534#7559#0" expanded="false" />
+            <element signature="e#7578#7599#0" expanded="false" />
+            <element signature="e#7625#7651#0" expanded="false" />
+            <element signature="e#7701#7743#0" expanded="false" />
+            <element signature="e#7789#7923#0" expanded="false" />
+            <element signature="e#7813#7847#0" expanded="false" />
+            <element signature="e#7879#7921#0" expanded="false" />
+            <element signature="e#7931#7967#0" expanded="false" />
+            <element signature="e#7982#8168#0" expanded="false" />
+            <element signature="e#8018#8138#0" expanded="false" />
+            <element signature="e#8144#8166#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -907,13 +973,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/selectors/selectors.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+        <state relative-caret-position="272">
+          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
             <element signature="n#!!block;n#hasNoParent#0" expanded="false" />
             <element signature="n#!!block;n#hasParent#0" expanded="false" />
+            <element signature="e#396#549#0" expanded="false" />
+            <element signature="e#474#527#0" expanded="false" />
             <element signature="n#!!block;n#hasChild#0" expanded="false" />
-            <element signature="n#!!block;n#setLeftPadding#0" expanded="false" />
+            <element signature="e#859#891#0" expanded="false" />
+            <element signature="e#1057#1090#0" expanded="false" />
+            <element signature="e#1149#1236#0" expanded="false" />
+            <element signature="e#1284#1335#0" expanded="false" />
+            <element signature="e#1450#1569#0" expanded="false" />
           </folding>
         </state>
       </provider>
