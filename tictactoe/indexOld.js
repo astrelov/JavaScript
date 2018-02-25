@@ -1,6 +1,8 @@
 let moves = [];
 let currentMove = 0;
-let pulledGameState = {};
+let pulledMoves = [];
+let pulledCurrentMove = 0;
+let pulledN;
 
 const gameField = document.querySelector('.field');
 const undoButt = document.querySelector('.undo-btn');
@@ -185,33 +187,27 @@ function clearField() {
   cells.forEach(cell => cell.classList.remove('r'));
 }
 
-function doRestart() {
-  removeWinTitle();
-  removeWinCells();
-  disableButton.call(undoButt);
-  disableButton.call(redoButt);
-  clearField();
+function render() {
   moves = [];
   currentMove = 0;
-}
+  clearField();
+  removeWinCells();
+  removeWinTitle();
 
-function render() {
-  doRestart();
-
-  if (!pulledGameState || pulledGameState.N !== N) {
+  if (pulledN !== N) {
     return;
   }
-  for (let i = 0; i < pulledGameState.moves.length; i += 1) {
+  for (let i = 0; i < pulledMoves.length; i += 1) {
     const event = new CustomEvent('click', {
       bubbles: true,
       detail: {
         custom: true,
       },
     });
-    gameField.querySelector(`#c-${pulledGameState.moves[i].cellId}`).dispatchEvent(event);
+    gameField.querySelector(`#c-${pulledMoves[i].cellId}`).dispatchEvent(event);
   }
 
-  for (let i = pulledGameState.moves.length; i > pulledGameState.currentMove; i -= 1) {
+  for (let i = pulledMoves.length; i > pulledCurrentMove; i -= 1) {
     const event = new CustomEvent('click', {
       bubbles: true,
       detail: {
@@ -222,6 +218,12 @@ function render() {
   }
 
   checkWin();
+}
+
+function pullFromStorage() {
+  pulledMoves = JSON.parse(localStorage.getItem('moves'));
+  pulledCurrentMove = JSON.parse(localStorage.getItem('currentMove'));
+  pulledN = JSON.parse(localStorage.getItem('N'));
 }
 
 function removeCellPlayerClass() {
@@ -237,12 +239,19 @@ function addCellPlayerClass() {
 }
 
 function pushToStorage() {
-  const gameState = { moves, N, currentMove };
-  localStorage.setItem('gameState', JSON.stringify(gameState));
+  localStorage.setItem('moves', JSON.stringify(moves));
+  localStorage.setItem('N', JSON.stringify(N));
+  localStorage.setItem('currentMove', JSON.stringify(currentMove));
 }
 
-function pullFromStorage() {
-  pulledGameState = JSON.parse(localStorage.getItem('gameState'));
+function doRestart() {
+  removeWinTitle();
+  removeWinCells();
+  disableButton.call(undoButt);
+  disableButton.call(redoButt);
+  clearField();
+  moves = [];
+  currentMove = 0;
 }
 
 gameField.addEventListener('click', (e) => {
@@ -313,9 +322,15 @@ restartButt.addEventListener('click', () => {
   localStorage.clear();
 });
 
-window.addEventListener('storage', () => {
-  pullFromStorage();
-  render();
+window.addEventListener('storage', (e) => {
+  if (e.key === null) {
+    doRestart();
+    return;
+  }
+  if (e.key === 'currentMove') {
+    pullFromStorage();
+    render();
+  }
 });
 
 try {

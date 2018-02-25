@@ -1,64 +1,54 @@
-const fragment = document.createDocumentFragment();
 const select = document.querySelector('select');
 let dataArray;
-let parentIndex;
-select.style.width = '400px';
-select.style.height = '600px';
-
-function hasNoParent(currentObj) {
-  return !dataArray.some(e => (currentObj.left > e.left && currentObj.right < e.right));
-}
-
-function hasParent(currentObj) {
-  return dataArray.some((elem, index) => {
-    if (elem.right === currentObj.right + 1 && elem.left < currentObj.left) {
-      parentIndex = index;
-      return true;
-    }
-    return false;
-  });
-}
-
-function hasChild(currentObj) {
-  return currentObj.left + 1 !== currentObj.right;
-}
 
 function setLeftPadding(charAmount) {
   this.style.paddingLeft = `${charAmount}ch`;
 }
 
-function recursivePaste(index = 0, paddingCharAmount = 0) {
-  const currentObj = dataArray[index];
+function fetchElement(siblings, left, right, depth = 0) {
+  dataArray.forEach((item) => {
+    if (item.left === left) {
+      siblings.push(item);
 
-  if (hasNoParent(currentObj)) {
-    paddingCharAmount = 0;
+      const currItem = siblings[siblings.length - 1];
+      currItem.depth = depth;
+
+      if (item.left + 1 < item.right) {
+        currItem.childs = fetchElement([], item.left + 1, item.right - 1, depth + 1);
+      }
+
+      if (right && item.right < right) {
+        siblings = fetchElement(siblings, item.right + 1, right, depth);
+      }
+    }
+  });
+  return siblings;
+}
+
+function makeDocumentFragment(nestedSetData) {
+  const fragment = document.createDocumentFragment();
+
+  function paste(array) {
+    array.forEach((x) => {
+      const op = new Option(x.name, x.id);
+      setLeftPadding.call(op, x.depth * 2);
+      fragment.appendChild(op);
+      if (x.childs) {
+        paste(x.childs);
+      }
+    });
   }
 
-  const op = new Option(currentObj.name, currentObj.id);
-  setLeftPadding.call(op, paddingCharAmount * 2);
-  fragment.appendChild(op);
-
-  if (hasChild(currentObj)) {
-    paddingCharAmount += 1;
-  }
-
-  while (!hasChild(currentObj) && hasParent(currentObj)) {
-    dataArray.splice(parentIndex, 1);
-    index -= 1;
-    paddingCharAmount -= 1;
-  }
-
-  index += 1;
-  if (index < dataArray.length) {
-    recursivePaste(index, paddingCharAmount);
-  }
+  paste(nestedSetData);
+  return fragment;
 }
 
 fetch('https://sectors-enpoint.herokuapp.com/sectors')
   .then(response => response.json())
   .then((array) => {
-    dataArray = array.sort((a, b) => (a.left - b.left));
+    dataArray = array.sort((a, b) => a.left - b.left);
 
-    recursivePaste();
+    const nestedSetData = fetchElement([], 1, dataArray.length * 2);
+    const fragment = makeDocumentFragment(nestedSetData);
     select.appendChild(fragment);
   });
