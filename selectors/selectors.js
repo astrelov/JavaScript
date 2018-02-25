@@ -5,6 +5,14 @@ function setLeftPadding(charAmount) {
   this.style.paddingLeft = `${charAmount}ch`;
 }
 
+function hasChild(item) {
+  return item.left + 1 < item.right;
+}
+
+function hasNextSibling(item, right) {
+  return right && item.right < right;
+}
+
 function fetchElement(siblings, left, right, depth = 0) {
   dataArray.forEach((item) => {
     if (item.left === left) {
@@ -13,11 +21,11 @@ function fetchElement(siblings, left, right, depth = 0) {
       const currItem = siblings[siblings.length - 1];
       currItem.depth = depth;
 
-      if (item.left + 1 < item.right) {
+      if (hasChild(item)) {
         currItem.childs = fetchElement([], item.left + 1, item.right - 1, depth + 1);
       }
 
-      if (right && item.right < right) {
+      if (hasNextSibling(item, right)) {
         siblings = fetchElement(siblings, item.right + 1, right, depth);
       }
     }
