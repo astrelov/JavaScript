@@ -54,7 +54,7 @@ function getHTMLElementFromTree(dataTree) {
 }
 
 fetch('https://sectors-enpoint.herokuapp.com/sectors')
-  .then((response) => response.json())
+  .then(response => response.json())
   .then((array) => {
     array = array.sort((a, b) => a.left - b.left);
 
