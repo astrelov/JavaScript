@@ -1,6 +1,5 @@
 let moves = [];
 let currentMove = 0;
-let pulledGameState = {};
 
 const gameField = document.querySelector('.field');
 const undoButt = document.querySelector('.undo-btn');
@@ -9,7 +8,40 @@ const restartButt = document.querySelector('.restart-btn');
 const wonTitle = document.querySelector('.won-title');
 const wonMsg = document.querySelector('.won-message');
 
-const N = gameField.querySelector('.row').childElementCount; // length of square side
+const SIDE = gameField.querySelectorAll('.row').length; // length of square side
+
+function cellsSetLinesDataAttr() {
+  const cells = gameField.querySelectorAll('.cell');
+
+  cells.forEach((cell) => {
+    const id = parseInt(cell.dataset.id, 10);
+    const column = id % SIDE;
+    let row = 0;
+    let diag0 = false;
+    let diag1 = false;
+
+    for (let i = id - SIDE; i >= 0; i -= SIDE) {
+      row += 1;
+    }
+
+    for (let i = 0; i < SIDE * SIDE; i += SIDE + 1) {
+      if (id === i) {
+        diag0 = true;
+      }
+    }
+
+    for (let i = SIDE - 1; i < (SIDE * SIDE) - 1; i += SIDE - 1) {
+      if (id === i) {
+        diag1 = true;
+      }
+    }
+
+    cell.dataset.row = row.toString();
+    cell.dataset.column = column.toString();
+    cell.dataset.diag0 = diag0.toString();
+    cell.dataset.diag1 = diag1.toString();
+  });
+}
 
 function disableButton() {
   this.disabled = true;
@@ -21,184 +53,112 @@ function enableButton() {
   this.style.cursor = 'pointer';
 }
 
-function removeWinTitle() {
+function hideWinTitle() {
   wonTitle.classList.add('hidden');
-  wonMsg.innerText = '';
 }
 
-function showWinTitle(playerWon) {
+function showWinTitle(isDraw) {
   wonTitle.classList.remove('hidden');
   restartButt.style.cursor = 'pointer';
-  if (playerWon) {
-    wonMsg.innerText = (playerWon === 'ch') ? 'Crosses won!' : 'Toes won!';
-  } else {
+
+  if (isDraw) {
     wonMsg.innerText = 'It\'s a draw!';
+  } else {
+    wonMsg.innerText = currentMove % 2 ? 'Crosses won!' : 'Toes won!';
   }
 }
 
-function removeWinCells() {
-  const winCells = Object.values(gameField.querySelectorAll('.win'));
+function clearWinCells() {
+  const winCells = gameField.querySelectorAll('.win');
 
   winCells.forEach((cell) => {
-    cell.classList.remove('win');
-    cell.classList.remove('horizontal');
-    cell.classList.remove('vertical');
-    cell.classList.remove('diagonal-right');
-    cell.classList.remove('diagonal-left');
+    cell.classList.remove('win', 'horizontal', 'vertical', 'diagonal-right', 'diagonal-left');
   });
 }
 
-function NewMove(cellId) {
-  this.cellId = cellId;
-  this.player = (moves.length % 2) ? 'r' : 'ch';
-}
+function getWinner() {
+  const currCell = gameField.querySelector(`#c-${moves[currentMove - 1]}`);
+  const player = currentMove % 2 ? 'ch' : 'r';
+  const cellsInRow = Object.values(gameField.querySelectorAll(`[data-row='${currCell.dataset.row}']`));
+  const cellsInCol = Object.values(gameField.querySelectorAll(`[data-column='${currCell.dataset.column}']`));
 
-function getWinningRowIndex() {
-  const rows = Object.values(gameField.querySelectorAll('.row'));
-  let winRow = null;
+  if (cellsInRow.every(cell => cell.classList.contains(player))) {
+    return {
+      line: 'row',
+      index: currCell.dataset.row,
+      toAddClass: 'horizontal',
+    };
+  }
 
-  rows.forEach((row, ind) => {
-    const cells = Object.values(row.childNodes);
-    const rowWon = cells.every(cell => cell.classList.contains('ch')) || cells.every(cell => cell.classList.contains('r'));
-    if (rowWon) {
-      winRow = ind;
-    }
-  });
+  if (cellsInCol.every(cell => cell.classList.contains(player))) {
+    return {
+      line: 'column',
+      index: currCell.dataset.column,
+      toAddClass: 'vertical',
+    };
+  }
 
-  return winRow;
-}
-
-function getWinningColumnIndex() {
-  for (let i = 0; i < N; i += 1) {
-    const cellsCh = [];
-    const cellsR = [];
-    for (let j = 0; j < N; j += 1) {
-      const cell = gameField.querySelector(`#c-${(j * N) + i}`);
-      cellsCh.push(cell.classList.contains('ch'));
-      cellsR.push(cell.classList.contains('r'));
-    }
-    if (cellsCh.every(e => e)) {
-      return i;
-    }
-    if (cellsR.every(e => e)) {
-      return i;
+  if (currCell.dataset.diag0 === 'true') {
+    const cellsInDiag = Object.values(gameField.querySelectorAll('[data-diag0=\'true\']'));
+    if (cellsInDiag.every(cell => cell.classList.contains(player))) {
+      return {
+        line: 'diag0',
+        index: 'true',
+        toAddClass: 'diagonal-right',
+      };
     }
   }
+  if (currCell.dataset.diag1 === 'true') {
+    const cellsInDiag = Object.values(gameField.querySelectorAll('[data-diag1=\'true\']'));
+    if (cellsInDiag.every(cell => cell.classList.contains(player))) {
+      return {
+        line: 'diag1',
+        index: 'true',
+        toAddClass: 'diagonal-left',
+      };
+    }
+  }
+
+  if (currentMove === SIDE * SIDE) {
+    return {
+      line: 'draw',
+    };
+  }
+
   return null;
 }
 
-function checkFirstDiagonale() {
-  const cellsCh = [];
-  const cellsR = [];
-  for (let i = 0; i < N * N; i += N + 1) {
-    const cell = gameField.querySelector(`#c-${i}`);
-    cellsCh.push(cell.classList.contains('ch'));
-    cellsR.push(cell.classList.contains('r'));
+function gameOver(winner) {
+  const winCells = gameField.querySelectorAll(`[data-${winner.line}='${winner.index}']`);
+
+  if (winner.line === 'draw') {
+    showWinTitle(true);
+    return;
   }
-  if (cellsCh.every(e => e)) {
-    return true;
-  }
-  if (cellsR.every(e => e)) {
-    return true;
-  }
-  return null;
+
+  winCells.forEach(cell => cell.classList.add('win', winner.toAddClass));
+  showWinTitle();
 }
 
-function checkSecondDiagonale() {
-  const cellsCh = [];
-  const cellsR = [];
-  for (let i = N - 1; i < (N * N) - 1; i += N - 1) {
-    const cell = gameField.querySelector(`#c-${i}`);
-    cellsCh.push(cell.classList.contains('ch'));
-    cellsR.push(cell.classList.contains('r'));
-  }
-  if (cellsCh.every(e => e)) {
-    return true;
-  }
-  if (cellsR.every(e => e)) {
-    return true;
-  }
-  return null;
+function clearPlayerCells() {
+  const cells = gameField.querySelectorAll('.cell');
+  cells.forEach(cell => cell.classList.remove('ch', 'r'));
 }
 
-function checkWin() {
-  const rowIndex = getWinningRowIndex();
-  const columnIndex = getWinningColumnIndex();
-  const firstDiag = checkFirstDiagonale();
-  const secondDiag = checkSecondDiagonale();
-
-  return columnIndex !== null || rowIndex !== null || firstDiag || secondDiag;
-}
-
-function gameOver() {
-  let direction;
-  let winCells = [];
-
-  const rowIndex = getWinningRowIndex();
-  const columnIndex = getWinningColumnIndex();
-  const firstDiag = checkFirstDiagonale();
-  const secondDiag = checkSecondDiagonale();
-
-  if (rowIndex !== null) {
-    direction = 'horizontal';
-    const rows = Object.values(gameField.querySelectorAll('.row'));
-    const row = rows[rowIndex];
-    winCells = Object.values(row.childNodes);
-  }
-
-  if (columnIndex !== null) {
-    direction = 'vertical';
-    for (let i = columnIndex; i < N * N; i += N) {
-      const cell = gameField.querySelector(`#c-${i}`);
-      winCells.push(cell);
-    }
-  }
-
-  if (firstDiag) {
-    direction = 'diagonal-right';
-    for (let i = 0; i < N * N; i += N + 1) {
-      const cell = gameField.querySelector(`#c-${i}`);
-      winCells.push(cell);
-    }
-  }
-
-  if (secondDiag) {
-    direction = 'diagonal-left';
-    for (let i = N - 1; i < (N * N) - 1; i += N - 1) {
-      const cell = gameField.querySelector(`#c-${i}`);
-      winCells.push(cell);
-    }
-  }
-
-  winCells.forEach((cell) => {
-    cell.classList.add('win');
-    cell.classList.add(direction);
-  });
-
-  const playerWon = winCells[0].classList.contains('ch') ? 'ch' : 'r';
-  showWinTitle(playerWon);
-}
-
-function clearField() {
-  const cells = Object.values(gameField.querySelectorAll('.cell'));
-  cells.forEach(cell => cell.classList.remove('ch'));
-  cells.forEach(cell => cell.classList.remove('r'));
-}
-
-function doRestart() {
-  removeWinTitle();
-  removeWinCells();
+function restartThisTabGame() {
+  hideWinTitle();
+  clearWinCells();
+  clearPlayerCells();
   disableButton.call(undoButt);
   disableButton.call(redoButt);
-  clearField();
   moves = [];
   currentMove = 0;
 }
 
-function render() {
-  doRestart();
+function renderPulledGame(pulledGameState) {
+  restartThisTabGame();
 
-  if (!pulledGameState || pulledGameState.N !== N) {
+  if (!pulledGameState || pulledGameState.SIDE !== SIDE) {
     return;
   }
   for (let i = 0; i < pulledGameState.moves.length; i += 1) {
@@ -208,7 +168,7 @@ function render() {
         custom: true,
       },
     });
-    gameField.querySelector(`#c-${pulledGameState.moves[i].cellId}`).dispatchEvent(event);
+    gameField.querySelector(`#c-${pulledGameState.moves[i]}`).dispatchEvent(event);
   }
 
   for (let i = pulledGameState.moves.length; i > pulledGameState.currentMove; i -= 1) {
@@ -220,54 +180,51 @@ function render() {
     });
     undoButt.dispatchEvent(event);
   }
-
-  checkWin();
 }
 
 function removeCellPlayerClass() {
-  const move = moves[currentMove];
-  const cell = document.querySelector(`#c-${move.cellId}`);
-  cell.classList.remove(move.player);
+  const id = moves[currentMove];
+  const cell = document.querySelector(`#c-${id}`);
+  cell.classList.remove('ch', 'r');
 }
 
 function addCellPlayerClass() {
-  const move = moves[currentMove];
-  const cell = document.querySelector(`#c-${move.cellId}`);
-  cell.classList.add(move.player);
+  const id = moves[currentMove];
+  const cell = document.querySelector(`#c-${id}`);
+  cell.classList.add(currentMove % 2 ? 'r' : 'ch');
 }
 
-function pushToStorage() {
-  const gameState = { moves, N, currentMove };
+function pushGameToStorage() {
+  const gameState = { moves, currentMove, SIDE };
   localStorage.setItem('gameState', JSON.stringify(gameState));
 }
 
-function pullFromStorage() {
-  pulledGameState = JSON.parse(localStorage.getItem('gameState'));
+function pullStorageGameState() {
+  return JSON.parse(localStorage.getItem('gameState'));
 }
 
 gameField.addEventListener('click', (e) => {
-  const clickOnActiveCell = e.target.classList.contains('cell') && wonTitle.classList.contains('hidden');
-  if (!clickOnActiveCell) {
+  const clickedActiveCell = e.target.classList.contains('cell') && wonTitle.classList.contains('hidden');
+  if (!clickedActiveCell) {
     return;
   }
 
   moves.length = currentMove; // delete all posible redo moves
-  moves.push(new NewMove(e.target.dataset.id));
+  moves.push(e.target.dataset.id);
 
   addCellPlayerClass();
   enableButton.call(undoButt);
   disableButton.call(redoButt);
 
   currentMove += 1;
-  if (currentMove === N * N) {
-    showWinTitle();
-  }
-  if (checkWin()) {
-    gameOver();
+
+  const winner = getWinner();
+  if (winner) {
+    gameOver(winner);
   }
 
   if (!e.detail.custom) {
-    pushToStorage();
+    pushGameToStorage();
   }
 });
 
@@ -275,8 +232,8 @@ undoButt.addEventListener('click', (e) => {
   currentMove -= 1;
 
   removeCellPlayerClass();
-  removeWinTitle();
-  removeWinCells();
+  hideWinTitle();
+  clearWinCells();
   enableButton.call(redoButt);
 
   if (!currentMove) {
@@ -284,7 +241,7 @@ undoButt.addEventListener('click', (e) => {
   }
 
   if (!e.detail.custom) {
-    pushToStorage();
+    pushGameToStorage();
   }
 });
 
@@ -296,36 +253,25 @@ redoButt.addEventListener('click', (e) => {
   if (currentMove === moves.length) {
     disableButton.call(redoButt);
   }
-  if (currentMove === N * N) {
-    showWinTitle();
-  }
-  if (checkWin()) {
-    gameOver();
+
+  const winner = getWinner();
+  if (winner) {
+    gameOver(winner);
   }
 
   if (!e.detail.custom) {
-    pushToStorage();
+    pushGameToStorage();
   }
 });
 
 restartButt.addEventListener('click', () => {
-  doRestart();
+  restartThisTabGame();
   localStorage.clear();
 });
 
 window.addEventListener('storage', () => {
-  pullFromStorage();
-  render();
+  renderPulledGame(pullStorageGameState());
 });
 
-try {
-  pullFromStorage();
-  render();
-} catch (error) {
-  if (error instanceof TypeError) {
-    console.log('ERROR: TypeError occured at initial render (probably no previously saved data on localStorage)');
-  } else {
-    throw error;
-  }
-}
-
+cellsSetLinesDataAttr();
+renderPulledGame(pullStorageGameState());
