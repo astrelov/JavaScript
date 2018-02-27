@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8a9afa02-22c8-4a4c-a9d2-5e1174d07bec" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/tictactoe/index.js" afterPath="$PROJECT_DIR$/tictactoe/index.js" />
       <change beforePath="$PROJECT_DIR$/tictactoe/indexOld.js" afterPath="$PROJECT_DIR$/tictactoe/indexOld.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,7 +39,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tictactoe/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="118">
@@ -95,6 +94,81 @@
                 <element signature="e#6357#6387#0" expanded="false" />
                 <element signature="e#6437#6488#0" expanded="false" />
                 <element signature="e#6533#6580#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="indexOld.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tictactoe/indexOld.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="455">
+              <caret line="321" column="9" lean-forward="false" selection-start-line="321" selection-start-column="9" selection-end-line="321" selection-end-column="9" />
+              <folding>
+                <element signature="n#!!block;n#disableButton#0" expanded="false" />
+                <element signature="n#!!block;n#enableButton#0" expanded="false" />
+                <element signature="n#!!block;n#removeWinTitle#0" expanded="false" />
+                <element signature="n#!!block;n#showWinTitle#0" expanded="false" />
+                <element signature="e#883#964#0" expanded="false" />
+                <element signature="e#970#1015#0" expanded="false" />
+                <element signature="n#!!block;n#removeWinCells#0" expanded="false" />
+                <element signature="e#1147#1355#0" expanded="false" />
+                <element signature="n#!!block;n#NewMove#0" expanded="false" />
+                <element signature="n#!!block;n#getWinningRowIndex#0" expanded="false" />
+                <element signature="e#1613#1835#0" expanded="false" />
+                <element signature="e#1804#1831#0" expanded="false" />
+                <element signature="n#!!block;n#getWinningColumnIndex#0" expanded="false" />
+                <element signature="e#1927#2296#0" expanded="false" />
+                <element signature="e#2011#2183#0" expanded="false" />
+                <element signature="e#2215#2238#0" expanded="false" />
+                <element signature="e#2269#2292#0" expanded="false" />
+                <element signature="n#!!block;n#checkFirstDiagonale#0" expanded="false" />
+                <element signature="e#2432#2586#0" expanded="false" />
+                <element signature="e#2616#2638#0" expanded="false" />
+                <element signature="e#2667#2689#0" expanded="false" />
+                <element signature="n#!!block;n#checkSecondDiagonale#0" expanded="false" />
+                <element signature="e#2836#2990#0" expanded="false" />
+                <element signature="e#3020#3042#0" expanded="false" />
+                <element signature="e#3071#3093#0" expanded="false" />
+                <element signature="n#!!block;n#checkWin#0" expanded="false" />
+                <element signature="n#!!block;n#gameOver#0" expanded="false" />
+                <element signature="e#3656#3837#0" expanded="false" />
+                <element signature="e#3867#4039#0" expanded="false" />
+                <element signature="e#3946#4035#0" expanded="false" />
+                <element signature="e#4058#4230#0" expanded="false" />
+                <element signature="e#4137#4226#0" expanded="false" />
+                <element signature="e#4250#4431#0" expanded="false" />
+                <element signature="e#4338#4427#0" expanded="false" />
+                <element signature="e#4462#4533#0" expanded="false" />
+                <element signature="n#!!block;n#clearField#0" expanded="false" />
+                <element signature="n#!!block;n#doRestart#0" expanded="false" />
+                <element signature="n#!!block;n#render#0" expanded="false" />
+                <element signature="e#5106#5123#0" expanded="false" />
+                <element signature="e#5184#5401#0" expanded="false" />
+                <element signature="e#5229#5304#0" expanded="false" />
+                <element signature="e#5266#5297#0" expanded="false" />
+                <element signature="e#5489#5650#0" expanded="false" />
+                <element signature="e#5534#5609#0" expanded="false" />
+                <element signature="e#5571#5602#0" expanded="false" />
+                <element signature="n#!!block;n#removeCellPlayerClass#0" expanded="false" />
+                <element signature="n#!!block;n#addCellPlayerClass#0" expanded="false" />
+                <element signature="n#!!block;n#pushToStorage#0" expanded="false" />
+                <element signature="n#!!block;n#pullFromStorage#0" expanded="false" />
+                <element signature="e#6288#6809#0" expanded="false" />
+                <element signature="e#6422#6439#0" expanded="false" />
+                <element signature="e#6690#6715#0" expanded="false" />
+                <element signature="e#6734#6755#0" expanded="false" />
+                <element signature="e#6781#6807#0" expanded="false" />
+                <element signature="e#6855#7090#0" expanded="false" />
+                <element signature="e#6997#7036#0" expanded="false" />
+                <element signature="e#7062#7088#0" expanded="false" />
+                <element signature="e#7136#7438#0" expanded="false" />
+                <element signature="e#7250#7289#0" expanded="false" />
+                <element signature="e#7319#7344#0" expanded="false" />
+                <element signature="e#7363#7384#0" expanded="false" />
+                <element signature="e#7410#7436#0" expanded="false" />
+                <element signature="e#7486#7528#0" expanded="false" />
+                <element signature="e#7573#7609#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -181,6 +255,7 @@
         <option value="$PROJECT_DIR$/selectors/index.html" />
         <option value="$PROJECT_DIR$/selectors/selectors.js" />
         <option value="$PROJECT_DIR$/tictactoe/index.js" />
+        <option value="$PROJECT_DIR$/tictactoe/indexOld.js" />
       </list>
     </option>
   </component>
@@ -482,7 +557,7 @@
       <workItem from="1519467329890" duration="4665000" />
       <workItem from="1519489476118" duration="27075000" />
       <workItem from="1519638978199" duration="482000" />
-      <workItem from="1519664572487" duration="17286000" />
+      <workItem from="1519664572487" duration="17325000" />
     </task>
     <task id="LOCAL-00001" summary="things have changed">
       <created>1517513191891</created>
@@ -589,11 +664,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519590819416</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="things have changed">
+      <created>1519745198050</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1519745198050</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="278904000" />
+    <option name="totallyTimeSpent" value="278943000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="235" y="246" width="1360" height="742" extended-state="6" />
@@ -956,10 +1038,76 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tictactoe/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="49" lean-forward="false" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tictactoe/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding>
+            <element signature="e#566#1192#0" expanded="false" />
+            <element signature="e#755#778#0" expanded="false" />
+            <element signature="e#832#891#0" expanded="false" />
+            <element signature="e#854#885#0" expanded="false" />
+            <element signature="e#958#1017#0" expanded="false" />
+            <element signature="e#980#1011#0" expanded="false" />
+            <element signature="n#!!block;n#disableButton#0" expanded="false" />
+            <element signature="n#!!block;n#enableButton#0" expanded="false" />
+            <element signature="n#!!block;n#hideWinTitle#0" expanded="false" />
+            <element signature="n#!!block;n#showWinTitle#0" expanded="false" />
+            <element signature="e#1567#1612#0" expanded="false" />
+            <element signature="e#1618#1694#0" expanded="false" />
+            <element signature="n#!!block;n#getWinner#0" expanded="false" />
+            <element signature="e#2342#2453#0" expanded="false" />
+            <element signature="e#2355#2448#0" expanded="false" />
+            <element signature="e#2520#2635#0" expanded="false" />
+            <element signature="e#2533#2630#0" expanded="false" />
+            <element signature="e#2840#2955#0" expanded="false" />
+            <element signature="e#2855#2948#0" expanded="false" />
+            <element signature="e#3163#3277#0" expanded="false" />
+            <element signature="e#3178#3270#0" expanded="false" />
+            <element signature="e#3318#3363#0" expanded="false" />
+            <element signature="e#3331#3358#0" expanded="false" />
+            <element signature="e#3532#3573#0" expanded="false" />
+            <element signature="n#!!block;n#restartThisTabGame#0" expanded="false" />
+            <element signature="n#!!block;n#renderPulledGame#0" expanded="false" />
+            <element signature="e#4133#4150#0" expanded="false" />
+            <element signature="e#4211#4421#0" expanded="false" />
+            <element signature="e#4256#4331#0" expanded="false" />
+            <element signature="e#4293#4324#0" expanded="false" />
+            <element signature="e#4509#4670#0" expanded="false" />
+            <element signature="e#4554#4629#0" expanded="false" />
+            <element signature="e#4591#4622#0" expanded="false" />
+            <element signature="n#!!block;n#removeCellPlayerClass#0" expanded="false" />
+            <element signature="n#!!block;n#addCellPlayerClass#0" expanded="false" />
+            <element signature="n#!!block;n#pullStorageGameState#0" expanded="false" />
+            <element signature="e#5287#5777#0" expanded="false" />
+            <element signature="e#5421#5438#0" expanded="false" />
+            <element signature="e#5692#5719#0" expanded="false" />
+            <element signature="e#5745#5775#0" expanded="false" />
+            <element signature="e#5823#6059#0" expanded="false" />
+            <element signature="e#5962#6001#0" expanded="false" />
+            <element signature="e#6027#6057#0" expanded="false" />
+            <element signature="e#6105#6389#0" expanded="false" />
+            <element signature="e#6219#6258#0" expanded="false" />
+            <element signature="e#6304#6331#0" expanded="false" />
+            <element signature="e#6357#6387#0" expanded="false" />
+            <element signature="e#6437#6488#0" expanded="false" />
+            <element signature="e#6533#6580#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tictactoe/indexOld.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-601">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="455">
+          <caret line="321" column="9" lean-forward="false" selection-start-line="321" selection-start-column="9" selection-end-line="321" selection-end-column="9" />
           <folding>
             <element signature="n#!!block;n#disableButton#0" expanded="false" />
             <element signature="n#!!block;n#enableButton#0" expanded="false" />
@@ -1025,76 +1173,6 @@
             <element signature="e#7410#7436#0" expanded="false" />
             <element signature="e#7486#7528#0" expanded="false" />
             <element signature="e#7573#7609#0" expanded="false" />
-            <element signature="e#7617#7653#0" expanded="false" />
-            <element signature="e#7668#7854#0" expanded="false" />
-            <element signature="e#7704#7824#0" expanded="false" />
-            <element signature="e#7830#7852#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tictactoe/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="49" lean-forward="false" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tictactoe/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-          <folding>
-            <element signature="e#566#1192#0" expanded="false" />
-            <element signature="e#755#778#0" expanded="false" />
-            <element signature="e#832#891#0" expanded="false" />
-            <element signature="e#854#885#0" expanded="false" />
-            <element signature="e#958#1017#0" expanded="false" />
-            <element signature="e#980#1011#0" expanded="false" />
-            <element signature="n#!!block;n#disableButton#0" expanded="false" />
-            <element signature="n#!!block;n#enableButton#0" expanded="false" />
-            <element signature="n#!!block;n#hideWinTitle#0" expanded="false" />
-            <element signature="n#!!block;n#showWinTitle#0" expanded="false" />
-            <element signature="e#1567#1612#0" expanded="false" />
-            <element signature="e#1618#1694#0" expanded="false" />
-            <element signature="n#!!block;n#getWinner#0" expanded="false" />
-            <element signature="e#2342#2453#0" expanded="false" />
-            <element signature="e#2355#2448#0" expanded="false" />
-            <element signature="e#2520#2635#0" expanded="false" />
-            <element signature="e#2533#2630#0" expanded="false" />
-            <element signature="e#2840#2955#0" expanded="false" />
-            <element signature="e#2855#2948#0" expanded="false" />
-            <element signature="e#3163#3277#0" expanded="false" />
-            <element signature="e#3178#3270#0" expanded="false" />
-            <element signature="e#3318#3363#0" expanded="false" />
-            <element signature="e#3331#3358#0" expanded="false" />
-            <element signature="e#3532#3573#0" expanded="false" />
-            <element signature="n#!!block;n#restartThisTabGame#0" expanded="false" />
-            <element signature="n#!!block;n#renderPulledGame#0" expanded="false" />
-            <element signature="e#4133#4150#0" expanded="false" />
-            <element signature="e#4211#4421#0" expanded="false" />
-            <element signature="e#4256#4331#0" expanded="false" />
-            <element signature="e#4293#4324#0" expanded="false" />
-            <element signature="e#4509#4670#0" expanded="false" />
-            <element signature="e#4554#4629#0" expanded="false" />
-            <element signature="e#4591#4622#0" expanded="false" />
-            <element signature="n#!!block;n#removeCellPlayerClass#0" expanded="false" />
-            <element signature="n#!!block;n#addCellPlayerClass#0" expanded="false" />
-            <element signature="n#!!block;n#pullStorageGameState#0" expanded="false" />
-            <element signature="e#5287#5777#0" expanded="false" />
-            <element signature="e#5421#5438#0" expanded="false" />
-            <element signature="e#5692#5719#0" expanded="false" />
-            <element signature="e#5745#5775#0" expanded="false" />
-            <element signature="e#5823#6059#0" expanded="false" />
-            <element signature="e#5962#6001#0" expanded="false" />
-            <element signature="e#6027#6057#0" expanded="false" />
-            <element signature="e#6105#6389#0" expanded="false" />
-            <element signature="e#6219#6258#0" expanded="false" />
-            <element signature="e#6304#6331#0" expanded="false" />
-            <element signature="e#6357#6387#0" expanded="false" />
-            <element signature="e#6437#6488#0" expanded="false" />
-            <element signature="e#6533#6580#0" expanded="false" />
           </folding>
         </state>
       </provider>

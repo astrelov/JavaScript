@@ -318,14 +318,5 @@ window.addEventListener('storage', () => {
   render();
 });
 
-try {
-  pullFromStorage();
-  render();
-} catch (error) {
-  if (error instanceof TypeError) {
-    console.log('ERROR: TypeError occured at initial render (probably no previously saved data on localStorage)');
-  } else {
-    throw error;
-  }
-}
-
+pullFromStorage();
+render();
