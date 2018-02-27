@@ -8,9 +8,9 @@ const restartButt = document.querySelector('.restart-btn');
 const wonTitle = document.querySelector('.won-title');
 const wonMsg = document.querySelector('.won-message');
 
-const SIDE = gameField.querySelectorAll('.row').length; // length of square side
+const SIDE = gameField.querySelectorAll('.row').length;
 
-function cellsSetLinesDataAttr() {
+(() => {
   const cells = gameField.querySelectorAll('.cell');
 
   cells.forEach((cell) => {
@@ -41,7 +41,7 @@ function cellsSetLinesDataAttr() {
     cell.dataset.diag0 = diag0.toString();
     cell.dataset.diag1 = diag1.toString();
   });
-}
+})();
 
 function disableButton() {
   this.disabled = true;
@@ -273,5 +273,4 @@ window.addEventListener('storage', () => {
   renderPulledGame(pullStorageGameState());
 });
 
-cellsSetLinesDataAttr();
 renderPulledGame(pullStorageGameState());
