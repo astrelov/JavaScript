@@ -1,39 +1,34 @@
 const select = document.querySelector('select');
 
 function getDataTree(dataArray) {
-  function hasNextSibling(item, right) {
-    return right && item.right < right;
-  }
 
   function hasChild(item) {
     return item.left + 1 < item.right;
   }
 
-  function pushItem(siblings, left, right, depth = 0) {
+  function pushItem(siblings, left = 1, depth = 0) {
     dataArray.forEach((item) => {
       if (item.left === left) {
         const childs = new Map();
 
         if (hasChild(item)) {
-          pushItem(childs, item.left + 1, item.right - 1, depth + 1);
+          pushItem(childs, item.left + 1, depth + 1);
         }
 
         item.depth = depth;
         siblings.set(item, childs);
 
-        if (hasNextSibling(item, right)) {
-          pushItem(siblings, item.right + 1, right, depth);
-        }
+        pushItem(siblings, item.right + 1, depth);
       }
     });
   }
 
   const map = new Map();
-  pushItem(map, 1, dataArray.length * 2);
+  pushItem(map);
   return map;
 }
 
-function getHTMLElementFromTree(dataTree) {
+function getHTMLNodeFromTree(dataTree) {
   const fragment = document.createDocumentFragment();
 
   function setLeftPadding(charAmount) {
@@ -59,7 +54,7 @@ fetch('https://sectors-enpoint.herokuapp.com/sectors')
     array = array.sort((a, b) => a.left - b.left);
 
     const dataTree = getDataTree(array);
-    const fragment = getHTMLElementFromTree(dataTree);
+    const fragment = getHTMLNodeFromTree(dataTree);
     select.appendChild(fragment);
   });
 
@@ -542,5 +537,5 @@ fetch('https://sectors-enpoint.herokuapp.com/sectors')
 // array = array.sort((a, b) => a.left - b.left);
 // const dataTree = getDataTree(array);
 // console.dir(dataTree);
-// const fragment = getHTMLElementFromTree(dataTree);
+// const fragment = getHTMLNodeFromTree(dataTree);
 // select.appendChild(fragment);
