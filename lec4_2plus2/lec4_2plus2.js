@@ -27,10 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
 
   const inp1 = document.createElement('input');
+  inp1.setAttribute('type', 'number');
   inp1.setAttribute('id', 'inp1');
-  inp1.setAttribute('autofocus', true);
+  inp1.setAttribute('autofocus', 'true');
 
   const inp2 = document.createElement('input');
+  inp2.setAttribute('type', 'number');
   inp2.setAttribute('id', 'inp2');
 
   const butt = document.createElement('button');
