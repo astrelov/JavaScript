@@ -1,0 +1,19 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: "@babel/register"
+    versions:
+    - 7.12.10
+    - 7.12.13
+    - 7.13.0
+    - 7.13.14
+    - 7.13.8
+  - dependency-name: p5
+    versions:
+    - 1.2.0
+    - 1.3.0
